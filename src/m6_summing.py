@@ -15,6 +15,17 @@ def main():
 
 
 def run_test_sum_cosines():
+    print("Cosine Test 1")
+    s
+    s
+    s
+
+    print("Cosine Test 2")
+    s
+    s
+    s
+
+    print("Cosine Test 2")
     """ Tests the   sum_cosines   function. """
     # ------------------------------------------------------------------
     # TODO: 2. Implement this function.
@@ -31,6 +42,9 @@ def run_test_sum_cosines():
 
 
 def sum_cosines(n):
+    total = 0
+    for k in range(n):
+        total = total
     """
     What comes in:  A non-negative integer n.
     What goes out:  The sum of the cosines of the integers
