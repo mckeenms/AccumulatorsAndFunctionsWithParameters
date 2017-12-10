@@ -6,14 +6,15 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    # run_test_better_draw_circles()
-    # run_test_even_better_draw_circles()
+    run_test_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -64,7 +65,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -92,6 +93,19 @@ def draw_circles():
 #   run_test_draw_circles  may get you started more quickly on your new
 #   better_draw_circles  and  run_test_better_draw_circles.
 # ----------------------------------------------------------------------
+def run_test_better_draw_circles():
+    print()
+    print("Test: better_draw_circles")
+    better_draw_circles()
+
+def better_draw_circles():
+    window = rg.RoseWindow(400, 400)
+    center = rg.Point(200, 200)
+    for k in range(14):
+        circle = rg.Circle(center, 5 * k)
+        circle.attach_to(window)
+        window.render(0.05)
+    window.close_on_mouse_click()
 
 
 # ----------------------------------------------------------------------
@@ -122,6 +136,22 @@ def draw_circles():
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def run_test_even_better_draw_circles():
+    print()
+    print("Test: even_better_draw_circles")
+    even_better_draw_circles()
+
+
+def even_better_draw_circles():
+    window = rg.RoseWindow(400, 400)
+    for k in range(10):
+        center = rg.Point(200 + math.sin(k), 200 + math.cos(k))
+        circle = rg.Circle(center, 100 / (k+1))
+        circle.fill_color('k')
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+    window.close_on_mouse_click()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
